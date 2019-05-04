@@ -20,5 +20,6 @@ public interface UserMapper {
      * @return
      */
     List<User> listAll();
-
+    void insertUser(User user);
+    void deleteUser(String id);
 }

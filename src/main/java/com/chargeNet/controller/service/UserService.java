@@ -16,5 +16,6 @@ public interface UserService {
      * @return
      */
     List<User> getAllUser();
-
+    void insertUser(User user);
+    void deleteUser(String id);
 }

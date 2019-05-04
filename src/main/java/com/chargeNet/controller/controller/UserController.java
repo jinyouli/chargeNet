@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.chargeNet.controller.bean.User;
 import com.chargeNet.controller.service.UserService;
+import com.chargeNet.controller.util.E3Result;
 
 /**
  * @author yolo<526668946@qq.com>
@@ -26,5 +27,28 @@ public class UserController {
         List<User> users = userService.getAllUser();
         return users;
     }
+    
+    @RequestMapping("/insertUser")
+    @ResponseBody
+    public Object insertUser(User user) {
+        userService.insertUser(user);
+        return "200";
+    }
+    
+    @RequestMapping("/deleteUser")
+    @ResponseBody
+    public Object deleteUser(String id) {
+        userService.deleteUser(id);
+        return "200";
+    }
+    
+    @RequestMapping("/addUser")
+    public Object addUser() {
+        return "content-add";
+    }
 
+    @RequestMapping("/content")
+    public Object getList() {
+        return "content";
+    }
 }
