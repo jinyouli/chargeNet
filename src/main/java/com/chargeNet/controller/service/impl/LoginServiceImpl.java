@@ -13,8 +13,6 @@ import com.chargeNet.controller.util.E3Result;
 import com.chargeNet.controller.util.JsonUtils;
 import com.chargeNet.controller.mapper.UserMapper;
 import com.chargeNet.controller.bean.User;
-import cn.e3mall.pojo.TbUserExample;
-import cn.e3mall.pojo.TbUserExample.Criteria;
 import com.chargeNet.controller.service.LoginService;
 
 /**
@@ -38,11 +36,8 @@ public class LoginServiceImpl implements LoginService {
 	public E3Result userLogin(String username, String password) {
 		// 1、判断用户和密码是否正确
 		//根据用户名查询用户信息
-		TbUserExample example = new TbUserExample();
-		Criteria criteria = example.createCriteria();
-		criteria.andUsernameEqualTo(username);
 		//执行查询
-		List<User> list = userMapper.selectByExample(example);
+		List<User> list = userMapper.selectByName(username);
 		if (list == null || list.size() == 0) {
 			//返回登录失败
 			return E3Result.build(400, "用户名或密码错误");
