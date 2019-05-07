@@ -24,7 +24,9 @@
        	</div>
     </div>
     
-    <script type="text/javascript">
+    <script type="text/javascript"></script>
+    <script src="/static/jquery.min.js"></script>
+    <script>
     	$("#login").click(function(){
     		var username = $("[name=username]").val();
     		var password = $("[name=password]").val();
@@ -33,7 +35,7 @@
     			$.messager.alert('错误',"用户名密码不正确！");
     			return ;
     		}
-    		window.location.href="/rest/page/index";
+    		window.location.href="/content";
     	});
     </script>
 </body>

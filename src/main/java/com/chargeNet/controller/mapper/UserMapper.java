@@ -22,4 +22,5 @@ public interface UserMapper {
     List<User> listAll();
     void insertUser(User user);
     void deleteUser(String id);
+    List<User> selectByName(String name);
 }
