@@ -4,14 +4,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>宜立方商城后台管理系统</title>
-<link rel="stylesheet" type="text/css" href="static/js/jquery-easyui-1.4.1/themes/gray/easyui.css" />
-<link rel="stylesheet" type="text/css" href="static/js/jquery-easyui-1.4.1/themes/icon.css" />
-<link rel="stylesheet" type="text/css" href="static/css/e3.css" />
-<link rel="stylesheet" type="text/css" href="static/css/default.css" />
-<script type="text/javascript" src="static/js/jquery-easyui-1.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="static/js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
-<script type="text/javascript" src="static/js/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript" src="static/js/common.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/js/jquery-easyui-1.4.1/themes/gray/easyui.css" />
+<link rel="stylesheet" type="text/css" href="/static/js/jquery-easyui-1.4.1/themes/icon.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/e3.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/default.css" />
+<script type="text/javascript" src="/static/js/jquery-easyui-1.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/static/js/common.js"></script>
 <style type="text/css">
 	.content {
 		padding: 10px 10px 10px 10px;
@@ -29,22 +29,9 @@
          	<li>
          		<span>商品管理</span>
          		<ul>
-	         		<li data-options="attributes:{'url':'item-add'}">新增商品</li>
-	         		<li data-options="attributes:{'url':'item-list'}">查询商品</li>
-	         		<li data-options="attributes:{'url':'item-param-list'}">规格参数</li>
-	         	</ul>
-         	</li>
-         	<li>
-         		<span>网站内容管理</span>
-         		<ul>
-	         		<li data-options="attributes:{'url':'content-category'}">内容分类管理</li>
-	         		<li data-options="attributes:{'url':'content'}">内容管理</li>
-	         	</ul>
-         	</li>
-         	<li>
-         		<span>索引库管理</span>
-         		<ul>
-	         		<li data-options="attributes:{'url':'index-item'}">solr索引库维护</li>
+	         		<li data-options="attributes:{'url':'addUser'}">新增商品</li>
+	         		<li data-options="attributes:{'url':'content'}">查询商品</li>
+	         		<!--<li data-options="attributes:{'url':'item-param-list'}">规格参数</li>-->
 	         	</ul>
          	</li>
          </ul>
@@ -61,7 +48,10 @@
 		<span id="sysVersion">系统版本：V1.0</span>
 	    <span id="nowTime"></span>
 	</div>
-<script type="text/javascript">
+<script type="text/javascript"></script>
+    <script src="/static/jquery.min.js"></script>
+    <script src="/static/jstree.min.js"></script>
+    <script>
 $(function(){
 	$('#menu').tree({
 		onClick: function(node){
