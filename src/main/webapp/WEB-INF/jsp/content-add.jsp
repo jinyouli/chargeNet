@@ -24,9 +24,7 @@
 	 </div>
 </div>
 
-<script type="text/javascript"></script>
-    <script src="/static/jquery.min.js"></script>
-    <script>
+<script type="text/javascript">
 	var contentAddEditor ;
 	$(function(){
 

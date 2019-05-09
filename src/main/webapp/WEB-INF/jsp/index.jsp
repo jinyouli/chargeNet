@@ -9,8 +9,8 @@
 <link rel="stylesheet" type="text/css" href="/static/css/e3.css" />
 <link rel="stylesheet" type="text/css" href="/static/css/default.css" />
 <script type="text/javascript" src="/static/js/jquery-easyui-1.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="/static/js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
-<script type="text/javascript" src="/static/js/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
+
+
 <script type="text/javascript" src="/static/js/common.js"></script>
 <style type="text/css">
 	.content {
@@ -25,7 +25,7 @@
 	    <span class="loginInfo">登录用户：admin&nbsp;&nbsp;姓名：管理员&nbsp;&nbsp;角色：系统管理员</span>
 	</div>
     <div data-options="region:'west',title:'菜单',split:true" style="width:180px;">
-    	<ul id="menu" class="easyui-tree" style="margin-top: 10px;margin-left: 5px;">
+    	<ul id="menu" style="margin-top: 10px;margin-left: 5px;">
          	<li>
          		<span>商品管理</span>
          		<ul>
@@ -49,9 +49,9 @@
 	    <span id="nowTime"></span>
 	</div>
 <script type="text/javascript"></script>
-    <script src="/static/jquery.min.js"></script>
-    <script src="/static/jstree.min.js"></script>
-    <script>
+<script type="text/javascript" src="/static/js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
+
+<script>
 $(function(){
 	$('#menu').tree({
 		onClick: function(node){
