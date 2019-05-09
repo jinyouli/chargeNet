@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
 
 import com.chargeNet.controller.bean.User;
 import com.chargeNet.controller.mapper.UserMapper;
@@ -28,7 +29,10 @@ public class UserServiceImpl implements UserService {
     
     @Override
     public void insertUser(User user) {
-         userMapper.insertUser(user);
+    	String password = user.getPassword();
+    	user.setPassword(DigestUtils.md5DigestAsHex(password.getBytes()));
+    	
+        userMapper.insertUser(user);
     }
     
     @Override

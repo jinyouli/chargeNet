@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -55,10 +56,20 @@ public class UserController {
     public Object addUser() {
         return "content-add";
     }
+    
+    @RequestMapping("/")
+    public Object firstPage() {
+        return "index";
+    }
 
     @RequestMapping("/content")
     public Object getList() {
         return "content";
+    }
+    
+    @RequestMapping("/{page}")
+    public String showPage(@PathVariable String page) {
+        return page;
     }
     
     @RequestMapping("/login")
@@ -70,7 +81,10 @@ public class UserController {
 	@ResponseBody
 	public E3Result login(String username, String password,
 			HttpServletRequest request, HttpServletResponse response) {
+    	
 		E3Result e3Result = loginService.userLogin(username, password);
+		
+		System.out.println("test " + e3Result);
 		//判断是否登录成功
 		if(e3Result.getStatus() == 200) {
 			String token = e3Result.getData().toString();

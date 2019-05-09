@@ -23,7 +23,10 @@
 	    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="contentAddPage.submitForm()">提交</a>
 	 </div>
 </div>
-<script type="text/javascript">
+
+<script type="text/javascript"></script>
+    <script src="/static/jquery.min.js"></script>
+    <script>
 	var contentAddEditor ;
 	$(function(){
 
