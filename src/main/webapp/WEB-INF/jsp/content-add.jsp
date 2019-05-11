@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link href="/static/js/kindeditor-4.1.10/themes/default/default.css" type="text/css" rel="stylesheet">
 
-<script src="/static/js/jquery-easyui-1.4.1/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript" charset="utf-8" src="/static/js/kindeditor-4.1.10/kindeditor-all-min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/static/js/kindeditor-4.1.10/lang/zh_CN.js"></script>
 <div style="padding:10px 10px 10px 10px">
 	<form id="contentAddForm" class="itemForm" method="post">
 		<input type="hidden" name="categoryId"/>
@@ -24,7 +21,7 @@
 	 </div>
 </div>
 
-<script type="text/javascript">
+<script>
 	var contentAddEditor ;
 	$(function(){
 

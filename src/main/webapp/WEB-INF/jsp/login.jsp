@@ -26,21 +26,23 @@
     </div>
  </form>
     
-    <script type="text/javascript"></script>
-    <script src="/static/jquery.min.js"></script>
+<script type="text/javascript"></script>
+<script type="text/javascript" src="/static/js/jquery-easyui-1.4.1/jquery.min.js"></script>
+
+
     <script>
     	$("#login").click(function(){
     		
     		$.post("/user/login", $("#formlogin").serialize(),function(data){
+    			console.log("adsg == " + data);
 				if (data.status == 200) {
-					window.location.href="/content";
+					console.log("test254");
+					window.location.href="/";
 					
 				} else {
 					console.log("登录失败，原因是：" + data.msg + "失败");
 				}
 			});
-    		
-    		
     	});
     </script>
 </body>

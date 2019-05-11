@@ -52,7 +52,7 @@
 <script type="text/javascript" src="/static/js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
 
 <script>
-$(function(){
+
 	$('#menu').tree({
 		onClick: function(node){
 			if($('#menu').tree("isLeaf",node.target)){
@@ -71,7 +71,7 @@ $(function(){
 			}
 		}
 	});
-});
+
 setInterval("document.getElementById('nowTime').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
 </script>
 </body>

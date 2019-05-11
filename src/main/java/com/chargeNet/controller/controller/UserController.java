@@ -83,8 +83,6 @@ public class UserController {
 			HttpServletRequest request, HttpServletResponse response) {
     	
 		E3Result e3Result = loginService.userLogin(username, password);
-		
-		System.out.println("test " + e3Result);
 		//判断是否登录成功
 		if(e3Result.getStatus() == 200) {
 			String token = e3Result.getData().toString();
