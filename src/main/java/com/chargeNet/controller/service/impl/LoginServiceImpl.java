@@ -39,6 +39,7 @@ public class LoginServiceImpl implements LoginService {
 		// 1、判断用户和密码是否正确
 		//根据用户名查询用户信息
 		//执行查询
+
 		List<User> list = userMapper.selectByName(username);
 		if (list == null || list.size() == 0) {
 			//返回登录失败
@@ -51,16 +52,16 @@ public class LoginServiceImpl implements LoginService {
 			// 2、如果不正确，返回登录失败
 			return E3Result.build(400, "用户名或密码错误2");
 		}
+
 		// 3、如果正确生成token。
 		String token = UUID.randomUUID().toString();
 		// 4、把用户信息写入redis，key：token value：用户信息
 		user.setPassword(null);
-		
 		stringRedisTemplate.opsForValue().append("SESSION:" + token, JsonUtils.objectToJson(user));
 		// 5、设置Session的过期时间
 		stringRedisTemplate.expire("SESSION:" + token, SESSION_EXPIRE, TimeUnit.SECONDS);
 		// 6、把token返回
-		 
+
 		return E3Result.ok(token);
 	}
 
