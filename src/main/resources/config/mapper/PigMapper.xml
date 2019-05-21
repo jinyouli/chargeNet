@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chargeNet.controller.mapper.PigMapper">
+	<select id="listAll" resultType="Pig">
+		select * from pigdata
+	</select>
+	
+	<select id="insertPig" parameterType="Pig">
+		insert into pigdata (piguser,changetime,num_100,num_200,num_300,num_450,num_600,num_800) values (#{piguser,jdbcType=VARCHAR}, #{changetime,jdbcType=VARCHAR},#{num_100,jdbcType=VARCHAR}, #{num_200,jdbcType=VARCHAR},#{num_300,jdbcType=VARCHAR}, #{num_450,jdbcType=VARCHAR}, #{num_600,jdbcType=VARCHAR}, #{num_800,jdbcType=VARCHAR})	
+	</select>
+	
+	<select id="deletePig" parameterType="String">
+		delete from pigdata where id = #{id,jdbcType=VARCHAR}
+	</select>
+	
+	
+	<select id="selectByName" parameterType="String" resultType="Pig">
+		select * from pigdata 
+	</select> 
+</mapper>

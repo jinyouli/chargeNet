@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.chargeNet.controller.bean.Pig;
 import com.chargeNet.controller.bean.User;
 import com.chargeNet.controller.service.LoginService;
+import com.chargeNet.controller.service.PigService;
 import com.chargeNet.controller.service.UserService;
 import com.chargeNet.controller.util.CookieUtils;
 import com.chargeNet.controller.util.E3Result;
@@ -30,6 +32,9 @@ public class UserController {
 	
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private PigService pigService;
 
     @RequestMapping("/users")
     @ResponseBody
@@ -38,10 +43,24 @@ public class UserController {
         return users;
     }
     
+    @RequestMapping("/pigs")
+    @ResponseBody
+    public Object getAllPig() {
+        List<Pig> pigs = pigService.getAllPig();
+        return pigs;
+    }
+    
     @RequestMapping("/insertUser")
     @ResponseBody
     public Object insertUser(User user) {
         userService.insertUser(user);
+        return "200";
+    }
+    
+    @RequestMapping("/insertPig")
+    @ResponseBody
+    public Object insertPig(Pig pig) {
+        pigService.insertPig(pig);
         return "200";
     }
     
@@ -57,6 +76,11 @@ public class UserController {
         return "content-add";
     }
     
+    @RequestMapping("/addPig")
+    public Object addPig() {
+        return "pig-add";
+    }
+    
     @RequestMapping("/")
     public Object firstPage() {
         return "index";
@@ -65,6 +89,11 @@ public class UserController {
     @RequestMapping("/content")
     public Object getList() {
         return "content";
+    }
+    
+    @RequestMapping("/content-pig")
+    public Object getPigList() {
+        return "content-pig";
     }
     
     @RequestMapping("/{page}")

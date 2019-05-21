@@ -29,8 +29,8 @@
          	<li>
          		<span>商品管理</span>
          		<ul>
-	         		<li data-options="attributes:{'url':'addUser'}">新增商品</li>
-	         		<li data-options="attributes:{'url':'content'}">查询商品</li>
+	         		<li data-options="attributes:{'url':'addPig'}">新增商品</li>
+	         		<li data-options="attributes:{'url':'content-pig'}">查询商品</li>
 	         		<!--<li data-options="attributes:{'url':'item-param-list'}">规格参数</li>-->
 	         	</ul>
          	</li>
