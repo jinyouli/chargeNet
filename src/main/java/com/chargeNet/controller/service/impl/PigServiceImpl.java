@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
 import com.chargeNet.controller.bean.Pig;
+import com.chargeNet.controller.bean.Updatepig;
 import com.chargeNet.controller.mapper.PigMapper;
 import com.chargeNet.controller.service.PigService;
 
@@ -30,10 +31,15 @@ public class PigServiceImpl implements PigService {
     }
     
     @Override
+    public List<Pig> selectPigs(Updatepig piginfo){
+    	return pigMapper.selectPigs(piginfo);
+    }
+    
+    @Override
     public void insertPig(Pig pig) {
     	
     	Date currentTime = new Date();
-	    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 	    String changetime = formatter.format(currentTime);
     	
     	pig.setChangetime(changetime);

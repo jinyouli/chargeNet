@@ -3,6 +3,7 @@ package com.chargeNet.controller.service;
 import java.util.List;
 
 import com.chargeNet.controller.bean.Pig;
+import com.chargeNet.controller.bean.Updatepig;
 
 /**
  * @author yolo<526668946@qq.com>
@@ -16,6 +17,7 @@ public interface PigService {
      * @return
      */
     List<Pig> getAllPig();
+    List<Pig> selectPigs(Updatepig piginfo);
     void insertPig(Pig user);
     void deletePig(String id);
 }

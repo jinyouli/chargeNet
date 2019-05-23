@@ -50,6 +50,7 @@
 	</div>
 <script type="text/javascript"></script>
 <script type="text/javascript" src="/static/js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.form.js"></script>
 
 <script>
 

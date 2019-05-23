@@ -5,10 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.chargeNet.controller.bean.Pig;
+import com.chargeNet.controller.bean.Updatepig;
 import com.chargeNet.controller.bean.User;
 import com.chargeNet.controller.service.LoginService;
 import com.chargeNet.controller.service.PigService;
@@ -20,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.json.JSONObject;
 /**
  * @author yolo<526668946@qq.com>
  * @2019年3月6日 下午5:10:04
@@ -50,6 +53,17 @@ public class UserController {
         return pigs;
     }
     
+    @RequestMapping(value = "/selectpigs", method = RequestMethod.POST)
+    @ResponseBody
+    public Object getPigs(Updatepig updatepig) {
+        //List<Pig> pigs = pigService.getAllPig();
+    	String first_date = updatepig.getFirst_date();
+    	String second_date = updatepig.getSecond_date();
+    	
+    	List<Pig> pigs = pigService.selectPigs(updatepig);
+        return pigs;
+    }
+    
     @RequestMapping("/insertUser")
     @ResponseBody
     public Object insertUser(User user) {
@@ -68,6 +82,13 @@ public class UserController {
     @ResponseBody
     public Object deleteUser(String id) {
         userService.deleteUser(id);
+        return "200";
+    }
+    
+    @RequestMapping("/deletePig")
+    @ResponseBody
+    public Object deletePig(String id) {
+        pigService.deletePig(id);
         return "200";
     }
     

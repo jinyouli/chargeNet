@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<div>
+	<form id="form1" action="selectpigs" method="post">
+           日期: <input name="first_date" type="date" value="2014-01-13"/>
+     <label>至</label>
+    <input name="second_date" type="date" value="2014-01-13"/>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">查询</button>
+</form>
+</div>
+
 
 <div class="easyui-panel" title="Nested Panel" data-options="width:'100%',minHeight:500,noheader:true,border:false" style="padding:10px;">
     <div class="easyui-layout" data-options="fit:true">
@@ -29,18 +39,21 @@
 			
 			<table id="table_tablespaces" border="1">
 		    </table>
-
-		    
         </div>
     </div>
 </div>
-<script type="text/javascript">
 
+<style>
+div{float:left}
+</style>
+
+
+<script type="text/javascript">
 
 function mydelete(id){
 	console.log("id == " + id);
 	
-	$.post("/deleteUser",{id:id}, function(data){
+	$.post("/deletePig",{id:id}, function(data){
 		console.log("test == " + data);
 		if(data == "200"){
 			location.reload();
@@ -48,11 +61,15 @@ function mydelete(id){
 	});
 };
 
-//window.alert(5 + 16);
+$("#form1").ajaxForm(function(data){  
+	alert("提交成功！" + data); 
+	if(data=="1"){
+		  
+	}
+}); 
+
 $.get("http://localhost:8080/pigs", function(data){
-	//window.alert(data);
-	//console.log("dgf == " + JSON.stringify(data));
-	
+
 	var tbl_body = "";
     var odd_even = false;
     $.each(data, function() {
@@ -73,10 +90,8 @@ $.get("http://localhost:8080/pigs", function(data){
         odd_even = !odd_even;               
     })
     $("#table_tablespaces").html(tbl_body);
-    
+     
 });
-
-
 
 	
 </script>

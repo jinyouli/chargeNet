@@ -5,6 +5,10 @@
 		select * from pigdata
 	</select>
 	
+	<select id="selectPigs" parameterType="Updatepig" resultType="Pig">
+		select * from pigdata where changetime between #{first_date,jdbcType=VARCHAR} AND #{second_date,jdbcType=VARCHAR}
+	</select>
+	
 	<select id="insertPig" parameterType="Pig">
 		insert into pigdata (piguser,changetime,num_100,num_200,num_300,num_450,num_600,num_800) values (#{piguser,jdbcType=VARCHAR}, #{changetime,jdbcType=VARCHAR},#{num_100,jdbcType=VARCHAR}, #{num_200,jdbcType=VARCHAR},#{num_300,jdbcType=VARCHAR}, #{num_450,jdbcType=VARCHAR}, #{num_600,jdbcType=VARCHAR}, #{num_800,jdbcType=VARCHAR})	
 	</select>

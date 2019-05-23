@@ -12,6 +12,13 @@ public class Pig {
     private String piguser;
     private String changetime;
     private String num_100;
+    private String num_200;
+    private String num_300;
+    private String num_450;
+    private String num_600;
+    private String num_800;
+    
+    
     public int getId() {
 		return id;
 	}
@@ -66,10 +73,5 @@ public class Pig {
 	public void setNum_800(String num_800) {
 		this.num_800 = num_800;
 	}
-	private String num_200;
-    private String num_300;
-    private String num_450;
-    private String num_600;
-    private String num_800;
 
 }

@@ -3,6 +3,8 @@ package com.chargeNet.controller.mapper;
 import java.util.List;
 
 import com.chargeNet.controller.bean.Pig;
+import com.chargeNet.controller.bean.Updatepig;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -20,6 +22,7 @@ public interface PigMapper {
      * @return
      */
     List<Pig> listAll();
+    List<Pig> selectPigs(Updatepig piginfo);
     void insertPig(Pig pig);
     void deletePig(String id);
     List<Pig> selectByName(String name);
