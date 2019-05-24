@@ -3,7 +3,14 @@ package com.chargeNet.controller.bean;
 public class Updatepig {
     private String first_date;
     private String second_date;
+    private String piguser;
     
+	public String getPiguser() {
+		return piguser;
+	}
+	public void setPiguser(String piguser) {
+		this.piguser = piguser;
+	}
 	public String getFirst_date() {
 		return first_date;
 	}

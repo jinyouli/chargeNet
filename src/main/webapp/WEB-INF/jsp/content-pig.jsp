@@ -5,6 +5,8 @@
            日期: <input name="first_date" type="date" value="2014-01-13"/>
      <label>至</label>
     <input name="second_date" type="date" value="2014-01-13"/>
+    <label>客户名</label>
+    <input name="piguser" type="text"/>
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">查询</button>
 </form>
@@ -62,10 +64,26 @@ function mydelete(id){
 };
 
 $("#form1").ajaxForm(function(data){  
-	alert("提交成功！" + data); 
-	if(data=="1"){
-		  
-	}
+	var tbl_body = "";
+    var odd_even = false;
+    $.each(data, function() {
+        var tbl_row = "";
+        var id = "";
+        $.each(this, function(k , v) {
+        	//console.log("data == " + k + "  " + v);
+            tbl_row += "<td>"+v+"</td>";
+            if(k == "id"){
+            		id = v;
+            }
+        })
+        
+        
+        var button = "<td height=\"100px;\">" + "<input type=\"button\" value=\"删除\" style=\"width:100px;height:100px;background:green;\" onclick=\"mydelete('"+ id +"')\" />" + "</td>";
+        tbl_body += "<tr class=\""+( odd_even ? "odd" : "even")+"\">"+tbl_row + button +"</tr>";
+
+        odd_even = !odd_even;               
+    })
+    $("#table_tablespaces").html(tbl_body);
 }); 
 
 $.get("http://localhost:8080/pigs", function(data){

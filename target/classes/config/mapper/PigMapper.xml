@@ -6,7 +6,7 @@
 	</select>
 	
 	<select id="selectPigs" parameterType="Updatepig" resultType="Pig">
-		select * from pigdata where changetime between #{first_date,jdbcType=VARCHAR} AND #{second_date,jdbcType=VARCHAR}
+		select * from pigdata where changetime between #{first_date,jdbcType=VARCHAR} AND #{second_date,jdbcType=VARCHAR} AND piguser like CONCAT('%', #{piguser,jdbcType=VARCHAR}, '%')
 	</select>
 	
 	<select id="insertPig" parameterType="Pig">
