@@ -19,22 +19,18 @@
         <div data-options="region:'center'" style="padding:5px">
             <table border="1" id="tb">
 			　　 <thead>
-			　　　　<caption>历史知识点对比</caption>
+			　　　　<caption>档次记录</caption>
 			　　　　<tr>
-			　　　　　　<th rowspan="2">知识点</th>
-			　　　　　　<th rowspan="2">全校得分率</th>
-			　　　　　　<th rowspan="2">上次考试教师授课班级得分率</th>
-			　　　　　　<th rowspan="2">本次考试教师授课本机得分率</th>
-			　　　　　　<th colspan="3">本次分班级</th>
-			　　　　　　<th rowspan="2">神经网络预测得分率</th>
+			　　　　　　<th style="width:80px;" rowspan="2">客户</th>
+			　　　　　　<th style="width:80px;" rowspan="2">录入时间</th>
+			　　　　　　<th style="width:80px;" rowspan="2">赔付100</th>
+			　　　　　　<th style="width:80px;" rowspan="2">赔付200</th>
+			　　　　　　<th style="width:80px;" rowspan="2">赔付300</th>
+			　　　　　　<th style="width:80px;" rowspan="2">赔付450</th>
+					<th style="width:80px;" rowspan="2">赔付600</th>
+			　　　　　　<th style="width:80px;" rowspan="2">赔付800</th>
 			       </tr>
-			       
-			       <tr><td id="formID" value="APF00000003"></td></tr>  
-			       <tr>
-			　　　　　　<th>1班</th>
-			　　　　　　<th>2班</th>
-			　　　　　　<th>3班</th>
-			　　　　</tr>
+
 			　　</thead>
 			
 			</table>
@@ -53,14 +49,20 @@ div{float:left}
 <script type="text/javascript">
 
 function mydelete(id){
-	console.log("id == " + id);
 	
-	$.post("/deletePig",{id:id}, function(data){
-		console.log("test == " + data);
-		if(data == "200"){
-			location.reload();
-		}
-	});
+	if (confirm("你确定删除该记录吗？")) {  
+		console.log("id == " + id);
+		
+		$.post("/deletePig",{id:id}, function(data){
+			console.log("test == " + data);
+			if(data == "200"){
+				location.reload();
+			}
+		});
+    }  
+    else {  
+        //alert("点击了取消");  
+    }  
 };
 
 $("#form1").ajaxForm(function(data){  
@@ -71,7 +73,7 @@ $("#form1").ajaxForm(function(data){
         var id = "";
         $.each(this, function(k , v) {
         	//console.log("data == " + k + "  " + v);
-            tbl_row += "<td>"+v+"</td>";
+            tbl_row += "<td style=\"width:100px;height:100px;background:green;\">"+v+"</td>";
             if(k == "id"){
             		id = v;
             }
@@ -79,14 +81,14 @@ $("#form1").ajaxForm(function(data){
         
         
         var button = "<td height=\"100px;\">" + "<input type=\"button\" value=\"删除\" style=\"width:100px;height:100px;background:green;\" onclick=\"mydelete('"+ id +"')\" />" + "</td>";
-        tbl_body += "<tr class=\""+( odd_even ? "odd" : "even")+"\">"+tbl_row + button +"</tr>";
+        tbl_body += "<tr style=\"width:1000px;\" class=\""+( odd_even ? "odd" : "even")+"\">"+tbl_row + button +"</tr>";
 
         odd_even = !odd_even;               
     })
     $("#table_tablespaces").html(tbl_body);
 }); 
 
-$.get("http://localhost:8080/pigs", function(data){
+$.get("/pigs", function(data){
 
 	var tbl_body = "";
     var odd_even = false;
@@ -95,14 +97,14 @@ $.get("http://localhost:8080/pigs", function(data){
         var id = "";
         $.each(this, function(k , v) {
         	//console.log("data == " + k + "  " + v);
-            tbl_row += "<td>"+v+"</td>";
+            tbl_row += "<td style=\"width:80px;\" align=\"center\">"+v+"</td>";
             if(k == "id"){
             		id = v;
             }
         })
         
         
-        var button = "<td height=\"100px;\">" + "<input type=\"button\" value=\"删除\" style=\"width:100px;height:100px;background:green;\" onclick=\"mydelete('"+ id +"')\" />" + "</td>";
+        var button = "<td height=\"100px;\">" + "<input type=\"button\" value=\"删除该记录\" style=\"width:100px;height:100px;background:white;\" onclick=\"mydelete('"+ id +"')\" />" + "</td>";
         tbl_body += "<tr class=\""+( odd_even ? "odd" : "even")+"\">"+tbl_row + button +"</tr>";
 
         odd_even = !odd_even;               

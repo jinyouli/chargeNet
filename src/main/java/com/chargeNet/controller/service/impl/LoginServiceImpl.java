@@ -47,6 +47,7 @@ public class LoginServiceImpl implements LoginService {
 		}
 		//取用户信息
 		User user = list.get(0);
+		System.out.println("用户名==   " + DigestUtils.md5DigestAsHex(password.getBytes()) + "    " + user.getPassword());
 		//判断密码是否正确
 		if (!DigestUtils.md5DigestAsHex(password.getBytes()).equals(user.getPassword())) {
 			// 2、如果不正确，返回登录失败

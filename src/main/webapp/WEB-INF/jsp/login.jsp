@@ -7,7 +7,7 @@
 </head>
 <body style="background-color: #F3F3F3">
 <form id="formlogin" class="itemForm" method="post">
-    <div class="easyui-dialog" title="管理员登录" data-options="closable:false,draggable:false" style="width:400px;height:300px;padding:10px;">
+    <div class="easyui-dialog" title="管理员登录2" data-options="closable:false,draggable:false" style="width:400px;height:300px;padding:10px;">
        	<div style="margin-left: 50px;margin-top: 50px;">
        		<div style="margin-bottom:20px;">
 	            <div>
@@ -33,10 +33,13 @@
     <script>
     	$("#login").click(function(){
     		
-    		$.post("/user/login", $("#formlogin").serialize(),function(data){
+    		var username = $("input[name='username']").val();
+    		var password = $("input[name='password']").val();
+    		
+    		$.post("/user/login", { username: username, password: password },function(data){
     			console.log("adsg == " + data);
 				if (data.status == 200) {
-					console.log("test254");
+					console.log("test254"); 
 					window.location.href="/";
 					
 				} else {

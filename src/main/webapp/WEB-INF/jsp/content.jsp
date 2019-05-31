@@ -49,7 +49,7 @@ function mydelete(id){
 };
 
 //window.alert(5 + 16);
-$.get("http://localhost:8080/users", function(data){
+$.get("/users", function(data){
 	//window.alert(data);
 	//console.log("dgf == " + JSON.stringify(data));
 	

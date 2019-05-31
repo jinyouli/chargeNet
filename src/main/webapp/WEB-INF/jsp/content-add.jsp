@@ -33,19 +33,7 @@
 				$.post("/insertUser",$("#contentAddForm").serialize(), function(data){
 					console.log("test == " + data);
 					if(data == "200"){
-						//alert("jQuery alert box example !");
-						if (window.confirm('Really go to another page?'))
-						{
-						    // They clicked Yes
-						    console.log("tesst1");
-						    document.location = 'http://localhost:8080/content';
-						}
-						else
-						{
-						    // They clicked no
-							console.log("tesst2");
-							location.reload();
-						}
+						location.reload();
 					}
 				});
 			},

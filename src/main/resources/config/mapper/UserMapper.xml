@@ -6,7 +6,7 @@
 	</select>
 	
 	<select id="insertUser" parameterType="User">
-		insert into user (name,password) values (#{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
+		replace into user (name,password) values (#{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
 	</select>
 	
 	<select id="deleteUser" parameterType="String">
@@ -15,6 +15,6 @@
 	
 	
 	<select id="selectByName" parameterType="String" resultType="User">
-		select * from user 
+		select * from user where name = #{name,jdbcType=VARCHAR}
 	</select> 
 </mapper>

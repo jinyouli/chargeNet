@@ -18,6 +18,7 @@ import com.chargeNet.controller.service.UserService;
 import com.chargeNet.controller.util.CookieUtils;
 import com.chargeNet.controller.util.E3Result;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
@@ -132,12 +133,19 @@ public class UserController {
 	public E3Result login(String username, String password,
 			HttpServletRequest request, HttpServletResponse response) {
     	
+    	System.out.println("pass == " + username + "  " + password);
 		E3Result e3Result = loginService.userLogin(username, password);
 		//判断是否登录成功
 		if(e3Result.getStatus() == 200) {
 			String token = e3Result.getData().toString();
 			//如果登录成功需要把token写入cookie
-			CookieUtils.setCookie(request, response, "token", token);
+			//CookieUtils.setCookie(request, response, "token", token);
+            
+            Cookie cookie = new Cookie("token",token);
+            cookie.setPath("/");
+            cookie.setMaxAge(3600);
+            response.addCookie(cookie);
+            System.out.println("返回token == " + token);
 		}
 		//返回结果
 		return e3Result;
