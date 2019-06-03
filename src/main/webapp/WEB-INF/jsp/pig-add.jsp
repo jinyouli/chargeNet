@@ -11,11 +11,11 @@
 	        </tr>
 	        <tr>
 	            <td>客户：</td>
-	            <td><input class="easyui-textbox" type="text" name="piguser" data-options="required:true" style="width: 280px;"></input></td>
+	            <td><input class="easyui-textbox" type="text" name="piguser" style="width: 280px;"></input></td>
 	        </tr>
 	        <tr>
 	            <td>100元档：</td>
-	            <td><input class="easyui-textbox" type="number" name="num_100" data-options="required:true" style="width: 280px;"></input></td>
+	            <td><input class="easyui-textbox" type="number" name="num_100" style="width: 280px;"></input></td>
 	        </tr>
 	        <tr>
 	            <td>200元档：</td>
@@ -23,7 +23,7 @@
 	        </tr>
 	        <tr>
 	            <td>300元档：</td>
-	            <td><input class="easyui-textbox" type="number" name="num_300" data-options="required:true" style="width: 280px;"></input></td>
+	            <td><input class="easyui-textbox" type="number" name="num_300" style="width: 280px;"></input></td>
 	        </tr>
 	        <tr>
 	            <td>450元档：</td>

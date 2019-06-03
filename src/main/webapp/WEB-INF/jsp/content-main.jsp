@@ -30,6 +30,8 @@
 			　　　　　　<td align="center" style="width:80px;" rowspan="2">赔付450</td>
 					<td align="center" style="width:80px;" rowspan="2">赔付600</td>
 			　　　　　　<td align="center" style="width:80px;" rowspan="2">赔付800</td>
+					<td align="center" rowspan="2"><input type="button" value="" style="width:98px;background:white;border:none;"/>
+					</td>
 			       </tr>
 
 			　　</thead>
@@ -85,7 +87,7 @@ $("#form1").ajaxForm(function(data){
         })
         
         
-        var button = "<td height=\"100px;\">" + "<input type=\"button\" value=\"删除该记录\" style=\"width:100px;height:100px;background:white;\" onclick=\"mydelete('"+ id +"')\" />" + "</td>";
+        var button = "<td height=\"50px;\">" + "<input type=\"button\" value=\"删除该记录\" style=\"width:100px;height:50px;background:white;\" onclick=\"mydelete('"+ id +"')\" />" + "</td>";
         tbl_body += "<tr style=\"width:1000px;\" class=\""+( odd_even ? "odd" : "even")+"\">"+tbl_row + button +"</tr>";
 
         odd_even = !odd_even;               
@@ -112,7 +114,7 @@ $.get("/pigs", function(data){
         })
         
         
-        var button = "<td height=\"100px;\">" + "<input type=\"button\" value=\"删除该记录\" style=\"width:100px;height:100px;background:white;\" onclick=\"mydelete('"+ id +"')\" />" + "</td>";
+        var button = "<td height=\"50px;\">" + "<input type=\"button\" value=\"删除该记录\" style=\"width:100px;height:50px;background:white;\" onclick=\"mydelete('"+ id +"')\" />" + "</td>";
         tbl_body += "<tr class=\""+( odd_even ? "odd" : "even")+"\">"+tbl_row + button +"</tr>";
 
         odd_even = !odd_even;               

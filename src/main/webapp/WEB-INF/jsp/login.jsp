@@ -7,16 +7,16 @@
 </head>
 <body style="background-color: #F3F3F3">
 <form id="formlogin" class="itemForm" method="post">
-    <div class="easyui-dialog" title="管理员登录2" data-options="closable:false,draggable:false" style="width:400px;height:300px;padding:10px;">
+    <div class="easyui-dialog" title="管理员登录" data-options="closable:false,draggable:false" style="width:400px;height:300px;padding:10px;">
        	<div style="margin-left: 50px;margin-top: 50px;">
        		<div style="margin-bottom:20px;">
 	            <div>
-	            	用户名: <input name="username" class="easyui-textbox" data-options="required:true" style="width:200px;height:32px" value="jinyou"/>
+	            	用户名: <input name="username" class="easyui-textbox" data-options="required:true" style="width:200px;height:32px" value=""/>
 	            </div>
 	        </div>
 	        <div style="margin-bottom:20px">
 	            <div>
-	            	密&nbsp;&nbsp;码: <input name="password" class="easyui-textbox" type="password" style="width:200px;height:32px" data-options="" value="123"/>
+	            	密&nbsp;&nbsp;码: <input name="password" class="easyui-textbox" type="password" style="width:200px;height:32px" data-options="" value=""/>
 	            </div>
 	        </div>
 	        <div>
