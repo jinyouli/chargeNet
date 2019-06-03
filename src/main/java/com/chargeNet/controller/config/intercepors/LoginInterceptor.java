@@ -32,7 +32,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         String token = CookieUtils.getCookieValue(request, "token");
         String user = (String) stringRedisTemplate.opsForValue().get("SESSION:" + token);
         
-        System.out.println("user == " + user);
+       // System.out.println("user == " + user);
         
         //如果session中没有user，表示没登陆
         if (user == null){

@@ -27,11 +27,10 @@
     <div data-options="region:'west',title:'菜单',split:true" style="width:180px;">
     	<ul id="menu" style="margin-top: 10px;margin-left: 5px;">
          	<li>
-         		<span>商品管理</span>
+         		<span>记录管理</span>
          		<ul>
-         			<li data-options="attributes:{'url':'addUser'}">新增用户</li>
-	         		<li data-options="attributes:{'url':'addPig'}">新增商品</li>
-	         		<li data-options="attributes:{'url':'content-pig'}">查询商品</li>
+	         		<li data-options="attributes:{'url':'addPig'}">新增记录</li>
+	         		<li data-options="attributes:{'url':'content-main'}">查询记录</li>
 	         		<!--<li data-options="attributes:{'url':'item-param-list'}">规格参数</li>-->
 	         	</ul>
          	</li>

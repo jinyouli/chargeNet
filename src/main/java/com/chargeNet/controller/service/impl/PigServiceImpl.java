@@ -38,11 +38,11 @@ public class PigServiceImpl implements PigService {
     @Override
     public void insertPig(Pig pig) {
     	
-    	Date currentTime = new Date();
-	    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-	    String changetime = formatter.format(currentTime);
+//    	Date currentTime = new Date();
+//	    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+//	    String changetime = formatter.format(currentTime);
+//    	pig.setChangetime(changetime);
     	
-    	pig.setChangetime(changetime);
         pigMapper.insertPig(pig);
     }
     
